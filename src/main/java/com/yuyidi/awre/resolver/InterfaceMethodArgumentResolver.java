@@ -29,7 +29,8 @@ import java.util.concurrent.ConcurrentHashMap;
  * @class com.yuyidi.awre.resolver.InterfaceMethodArgumentResolver
  * @description 解析接口类型参数
  */
-public class InterfaceMethodArgumentResolver extends ModelAttributeMethodProcessor implements HandlerMethodArgumentResolver {
+public class InterfaceMethodArgumentResolver extends ModelAttributeMethodProcessor implements
+        HandlerMethodArgumentResolver {
 
     private final Map<Class, Field[]> realizeFieldCache =
             new ConcurrentHashMap<>(256);
@@ -46,7 +47,8 @@ public class InterfaceMethodArgumentResolver extends ModelAttributeMethodProcess
     }
 
     @Override
-    protected Object createAttribute(String attributeName, MethodParameter methodParam, WebDataBinderFactory binderFactory, NativeWebRequest webRequest) throws Exception {
+    protected Object createAttribute(String attributeName, MethodParameter methodParam, WebDataBinderFactory
+            binderFactory, NativeWebRequest webRequest) throws Exception {
         Class clazz = methodParam.getParameterType();
         //获取参数类型并根据参数类型获取具体的实现类
         if (realizeMap == null)

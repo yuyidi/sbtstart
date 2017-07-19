@@ -1,5 +1,6 @@
 package com.yuyidi.test;
 
+import org.apache.tomcat.util.buf.HexUtils;
 import org.junit.Test;
 
 import java.util.Arrays;
@@ -32,5 +33,10 @@ public class SimpleTest {
         T[] result = Arrays.copyOf(first, first.length + second.length);
         System.arraycopy(second, 0, result, first.length, second.length);
         return result;
+    }
+
+    @Test
+    public void testHex() {
+        System.out.println(HexUtils.toHexString(String.valueOf(10).getBytes()));
     }
 }
